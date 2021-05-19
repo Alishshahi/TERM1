@@ -1,0 +1,111 @@
+*{
+
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family:system-ui;
+
+}
+html{
+scroll-behavior:smooth;
+}
+ ul{
+ 	list-style: none;
+
+ }
+ a{
+ 	text-decoration: none;
+ }
+ .main-container{
+ 	width:100%;
+ 	height: 768px;
+ 	position:fixed;
+ 	background-image:url("mountains-615428_1280.jpg");
+ 	/*user:jpeter2 , viewed in May19 2021, uploaded at Jan. 30, 2015(https://pixabay.com/photos/mountains-village-trees-hills-615428/)*/
+ 	background-repeat: no-repeat;
+    
+    background-size: 100%;
+    background-position: center;
+ }
+
+/***navigation**/
+
+nav {
+	display: flex;
+	align-items:center;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: 600;
+	left:0px;
+	top:0px;
+	z-index:1;
+	position:fixed;
+	letter-spacing: 1px;
+	padding: 0px 5px;
+	width: 100%;  	
+}
+nav ul{
+	display:flex;
+	margin:0px 10px;
+	padding:0px 10px;
+}
+nav ul li a{
+	height:40px;
+	line-height: 43px;
+	margin:40px;
+	padding:0px,25px;
+	display:flex
+	color:#00008b;
+	transition:0.4s ease-in-out;
+}
+nav ul li a:hover{
+	border-radius: 10px 10px;
+	background-color: crimson;
+	color: black;
+	box-shadow: 5px 10px 30px rgba(219, 47, 6, 0.5);
+}
+.here{
+	background-color: red;
+	color:	#c0c0c0 rgb(192,192,192);
+	border-radius: 10px 5px;
+}
+ 
+/*--for text--*/
+
+.home-text{
+	position: absolute;
+	left:50%; 
+	top:50%;
+	transform: translate(-50%,-50%);
+	width: 90%;
+	color: #000;
+	font-style: italic;
+	letter-spacing: 1px;
+	margin: 0px;
+}
+.home-text h1 span{
+	color: red;
+	font-weight: 700;
+}
+.home-text p span{
+	color:red;
+	font-weight: 500;
+    text-decoration: underline;
+}
+ .logo a{
+	color:#000;
+	font-size: 25px;
+	font-weight: 600;
+	border-radius:10px 5px;
+}
+ .logo a:hover{
+	background-color:#deb887;
+	border-radius:10px 5px;
+}
+.logo span{
+	color:red;
+	font-size: 35px;
+
+}
+
+
