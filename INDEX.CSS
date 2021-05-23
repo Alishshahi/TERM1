@@ -1,101 +1,82 @@
 *{
-
 	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-	font-family:system-ui;
+	margin:0;
+	padding:0;
+	font-style:Sans-serif;
+}
+body{
+ background: url("pexel.jpg") no-repeat;
+/*-- Pixabay[online] [Uploaded at December 23 2016] Available from: (https://www.pexels.com/photo/blur-bottle-bright-building-273238)[Accessed 18 may 2021] ----*/
+position:relative;
 
 }
-html{
-scroll-behavior:smooth;
-}
- ul{
- 	list-style: none;
 
- }
- a{
- 	text-decoration: none;
- }
- body{
- 		position:relative;
+:root{
+  --color-1: rgba(0 0 0/ 64%);
+  /*--https://www.w3schools.com/css/tryit.asp?filename=trycss3_var--*/
+  }
+a{
+	text-decoration: none;
+}
+ul{
+	list-style: none;
+}
+.container1{
+	max-width: 1170px;
+	margin-left:20px;
 	
-	background: url("pexel.jpg") no-repeat;
-/*-- Pixabay, Uploaded at December 23, 2016(https://www.pexels.com/photo/blur-bottle-bright-building-273238/)*/
- }
 
-/***navigation**/
-
-
-
-nav {
-	display: flex;
-	align-items:center;
-	justify-content: space-around;
-	font-size: 20px;
-	font-weight: 600;
-	left:0px;
-	top:0px;
-	z-index:1;
-	position:fixed;
-	letter-spacing: 1px;
-	padding: 0px 5px;
-	width: 100%;  	
 }
-nav ul{
-	display:flex;
-	margin:0px 10px;
-	padding:0px 10px;
-}
-nav ul li a{
-	height:40px;
-	line-height: 43px;
-	margin:40px;
-	padding:0px,10px;
-	display:flex
-	color:#00008b;
-	transition:0.4s ease-in-out;
-}
-nav ul li a:hover{
-	border-radius: 10px 10px;
-	background-color: crimson;
-	color: black;
-	box-shadow: 5px 10px 30px rgba(219, 47, 6, 0.5);
-}
-.here{
-	background-color: red;
-	color:	#c0c0c0 rgb(192,192,192);
-	border-radius: 10px 5px;
-		
-	}
-
-
-	/* for toggle icon */
-	.menu{
+.menu{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: space-between;
 }
-.header{
-	
+/*header*/
+.header-items{
+	background-color: var(--color-1);
 	padding:12px 0;
 	position: relative;
 }
+/*--navbar--*/
+.header-items .nav{
+	padding:0 10px;
 
-.header nav ul li a:hover,
-.header nav ul li a.active{
-	color: #ffffff;
+
 }
-.header #nav-check{
+.header-items .nav ul li{
+	display: inline-block;
+	margin-left:10px;
+
+}
+.header-items .nav ul li a{
+	display: block;
+	font-size: 16px;
+	padding:10px 10px;
+	color: #ff9800;
+	margin-left:10px;
+	font-weight: bold;
+	transition:0.4s ease-in-out;
+}
+.header-items .nav ul li a:hover{
+	border-radius: 10px 10px;
+	background-color: crimson;
+	color: black;
+	box-shadow: 5px 10px 30px rgba(219, 47, 6, 0.5);
+	}
+
+
+.header-items #nav-check{
 	position: absolute;
 	opacity:0;
 	pointer-events: none;
 }
 .nav-toggler{
-	height: 34px;
-	width: 44px;
+	height: 44px;
+	width: 55px;
 	background-color: #ffffff;
-	border-radius: 4px;
+	border-radius: 15px;
 	cursor: pointer;
 	display: none;
 	align-items: center;
@@ -104,9 +85,9 @@ nav ul li a:hover{
 }
 .nav-toggler span{
 	display: block;
-	height: 2px;
-	width: 20px;
-	background-color: blue;
+	height: 4px;
+	width: 30px;
+	background-color: #009688;
 	position: relative;
 }
 .nav-toggler span::before,
@@ -115,7 +96,7 @@ nav ul li a:hover{
    position: absolute;
    width: 100%;
    height: 100%;
-   background-color:blue;
+   background-color: var(--color-1);
    left:0;
 }
 .nav-toggler span::before{
@@ -127,37 +108,42 @@ nav ul li a:hover{
 @media(max-width: 991px){
     .nav-toggler{
     	display: flex;
-    }
-    .header nav{
+    
+   }
+   /*--nav menu will be hidden*/
+    .header-items .nav{
     	position: absolute;
     	left:0;
     	top:100%;
     	width: 100%;
-    	background-color: var(--color-1);
-    	border-top: 1px solid rgba(255,255,255,0.2);
+    	background-color:rgb(60, 60, 60);
+    	border:5px solid rgba(255,255,255,0.2);
     	opacity:0;
     	visibility: hidden;
-    	display: inline-block;
     }
-    .header nav ul li{
-    	display: inline-block;
+     .header-items .nav ul li a{
+    	border:5px solid rgba(255,255,255,0.2);	 
+    }
+    .header-items .nav ul li{
+    	display: block;
     	margin:0;
     }
-    .header #nav-check:checked ~ nav{
+    /*--nav menu will be visible*/
+    .header-items #nav-check:checked ~ .nav{
        opacity: 1;
        visibility: visible;
     }
-    .header #nav-check:focus ~ .nav-toggler{
+    .header-items #nav-check:focus ~ .nav-toggler{
     	box-shadow: 0 0 15px #000000;
     }
-    .header #nav-check:checked ~ .nav-toggler span{
+    .header-items #nav-check:checked ~ .nav-toggler span{
     	background-color: transparent;
     }
-    .header #nav-check:checked ~ .nav-toggler span::before{
+    .header-items #nav-check:checked ~ .nav-toggler span::before{
     	top:0;
     	transform: rotate(45deg);
     }
-    .header #nav-check:checked ~ .nav-toggler span::after{
+    .header-items #nav-check:checked ~ .nav-toggler span::after{
     	top:0;
     	transform: rotate(-45deg);
     }
@@ -198,10 +184,18 @@ nav ul li a:hover{
 .logo span{
 	color:red;
 	font-size: 35px;
-
 }
 
-/*---contact----*/
+/*---contact page----*/
+ 
+
+.page{
+ 		position:relative;
+	
+	background: url("pexel.jpg") no-repeat;
+/*-- Pixabay[online] [Uploaded at December 23 2016] Available from: (https://www.pexels.com/photo/blur-bottle-bright-building-273238)[Accessed 18 may 2021] ----*/
+
+} 
  .page .contact{
  	align-items: center;
 	flex-direction:column;
@@ -209,16 +203,14 @@ nav ul li a:hover{
 	justify-content:center;
 	background-size:cover;
 	padding: 50px 100px;
-
-
 }
 .here1{
 	background-color: red;
-	color:	#c0c0c0 rgb(192,192,192);
+	color:#c0c0c0 rgb(192,192,192);
 	border-radius: 10px 5px;
 }
 .page .contact .content{
-	max-width: 800px;
+	max-width: 700px;
 	margin-top: 0px;
 	
 }
@@ -226,36 +218,28 @@ nav ul li a:hover{
 	font-size: 45px;
 	font-weight:500;
 	color:crimson;
-	
 }
 .page .contact .content p{
 	
 	font-weight:300;
 	padding-right: 60%;
 	color: blue;
-
 }
  .container{
 	width:100%;
 	display: flex;
 	justify-content:center;
 	align-items: center;
-
-
 }
 .container .contactinfo{
 	width:50%; 
 	display:flex;
 	flex-direction:column;
-	
-
 }
 .container .contactinfo .box{
 	position: relative;
 	padding: 20px 0;
 	display: flex;
-	
-
 }
 .container .contactinfo .box .icon{
 min-width:60px;
@@ -272,7 +256,6 @@ font-size: 22px;
 	font-size: 16px;
 	flex-direction:column;
 	font-weight:250;
-
 }
 .container .contactinfo .box .text h3{
 	font-weight: 500;
@@ -302,14 +285,14 @@ justify-content: center;
 align-items:center;
 margin-top:20px;
 }
-input#name{
+.main input#name{
 	width: 300px;
 	border-radius: 3px;
 	box-shadow: inset 1px 1px 5px;
 	padding: 7px;
 
 }
-input{
+.main input{
 	background-color: rgb(250,100,0,0.8);
 	color: #fff;
 }
@@ -333,12 +316,19 @@ textarea{
   
 
   /*---for CV page---*/
-  .box-outer{
 
-	width: 100%;	
+
+  .page1 {
+ 	position:relative;
+	background: url("pexel.jpg") no-repeat;
+/*-- Pixabay[online] [Uploaded at December 23 2016] Available from: (https://www.pexels.com/photo/blur-bottle-bright-building-273238)[Accessed 18 may 2021] ----*/
+ 
+} 
+  .box-outer{
+   width: 100%;	
 }
-.here2{
-	background-color: red;
+.here1{
+	background-color: rgb(0 150 136 / 52%);
 	color:	#c0c0c0 rgb(192,192,192);
 	border-radius: 10px 5px;
 }
@@ -349,10 +339,12 @@ textarea{
 	margin:0 auto;
 
 }
+
 .box-outer{
 	padding:80px ;
 
 }
+
 .box1{
 	background-color: #4682b4;
 	width:35%;
@@ -361,6 +353,7 @@ textarea{
 
 
 }
+
 .mypic{
 	width:100%;
 	
@@ -373,15 +366,20 @@ textarea{
 	 padding-left: 50px;
 }
 .box1 h1:hover{
+
    color:crimson;
 }
+
 .box1 h2{
+
 	padding: 50px;
 }
+
 .box1 h2:hover{
 	color:crimson;
 }
 .box1 p{
+
 	color:#ceced1;
 	font-family: system-ui;
 	font-weight:200;
@@ -390,40 +388,46 @@ textarea{
 
 }
 .box1 h2{
+
 	color:#ceced1;
 	font-family:system-ui;
 	font-weight: 500;
 	padding-left:80px;
 
 }
+
 .box1 .skill{
+
 	width:30%;
 	padding-left:10px;
 }
 
 .skill-logo{
+
 	width:30%;
 	
 	padding-left:40px;
 }
+
 .skill-logo1{
 	width:30%;
 	padding-left: 30px;
 
 }
+
 .skill-logo2{
 	width:30%;
 	padding-left:30px;
 }
+
 #skill1{
 	background-color:#333;
 	border-radius:12px;
 	height:8px;
 	width:80%;
-	
-	
 
 }
+
 #skill1:after{
 	content:'';
 	display:block;
@@ -433,6 +437,7 @@ textarea{
 	width:30%;
 
 }
+
 #skill2{
 	background-color:#333;
 	border-radius:12px;
@@ -441,6 +446,7 @@ textarea{
 	
 
 }
+
 #skill2:after{
 	content:'';
 	display:block;
@@ -448,12 +454,12 @@ textarea{
 	border-radius:13px;
 	height:8px;
 	width:50%;
-}#skill3{
+}
+#skill3{
 	background-color:#333;
 	border-radius:12px;
 	height:8px;
 	width:80%;
-
 
 }
 #skill3:after{
@@ -464,7 +470,6 @@ textarea{
 	height:8px;
 	width:70%;
 }
-
 
 .box2{
 	width:60%;
@@ -493,3 +498,137 @@ textarea{
 	
 	font-weight: bold;
 }
+  /*--portfolio--*/
+   .page1{
+ 	position:relative;
+	background: url("pexel.jpg") no-repeat;
+/*-- Pixabay[online] [Uploaded at December 23 2016] Available from: (https://www.pexels.com/photo/blur-bottle-bright-building-273238)[Accessed 18 may 2021] ----*/
+}
+   .here2{
+	background-color: rgb(0 150 136 / 52%);
+	border-radius: 10px 5px;
+
+	
+	
+
+  }
+  .here2 span{
+  	color:red;
+  }
+  .here2:hover{
+  	border-radius: 10px 10px;
+	background-color: crimson;
+	color: black;
+	box-shadow: 5px 10px 30px rgba(219, 47, 6, 0.5);
+	}
+
+  
+  .intro{
+  	text-align: center;
+  	padding-right: 50px;
+  }
+ .intro h2{
+ 	color:#808080;
+
+  }
+  .intro h1{
+  	color:#4d0000;
+  }
+  .content1{ 
+  	padding:30px;
+  	display: grid;
+  	grid-template-columns: repeat(3, 1fr);
+  	grid-template-rows:repeat(4, 200px);
+  	grid-gap: 50px;
+  }
+  .img-gallery1{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery1 > h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
+ .img-gallery2{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery2 > h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
+ .img-gallery3{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery3 > h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
+ .img-gallery1{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery4> h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
+ .img-gallery4{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery4 > h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
+ .img-gallery5{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery5 > h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
+ .img-gallery6{
+  	background-color:#eee;
+  	display:flex;
+  	height:200px;
+  	margin:5px;
+  	width:250px;
+  }
+
+  .img-gallery6 > h2{
+  	align-self: center;
+  	text-align:center;
+  	width:100%;
+  }
